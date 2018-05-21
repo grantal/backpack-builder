@@ -27,6 +27,11 @@
   to { transform: rotate(360deg); }
 }
 
+.item-pool {
+  display: inline-block;
+  width: 50%;
+}
+
 .backpack-item {
   padding: 1em;
   text-align: left;
