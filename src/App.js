@@ -90,10 +90,18 @@ class BackpackItem extends Component {
 }
 
 class WeightCounter extends Component {
+  poundsOunces(weight){
+    if(weight > 16){
+      return (Math.floor(weight / 16)) + " lbs. " + (weight % 16) + " oz."
+    }
+    return weight + " oz."
+  }
+
+
   render() {
     return (
       <div className="weight-counter">
-        <span><b>Total Weight:</b> {this.props.weight} oz.</span>
+        <span><b>Total Weight:</b> {this.poundsOunces(this.props.weight)}</span>
       </div>
     );
   }
