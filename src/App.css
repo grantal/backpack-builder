@@ -27,9 +27,8 @@
   to { transform: rotate(360deg); }
 }
 
-.item-pool {
-  display: inline-block;
-  width: 50%;
+.weight-counter {
+  text-align: center;
 }
 
 .backpack-item {
