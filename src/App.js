@@ -94,9 +94,9 @@ class BackpackItem extends Component {
 class WeightCounter extends Component {
   poundsOunces(weight){
     if(weight > 16){
-      return (Math.floor(weight / 16)) + " lbs. " + (weight % 16).toFixed(WEIGHT_DECIMAL_PRECISION) + " oz."
+      return (Math.floor(weight / 16)) + " lbs. " + Number((weight % 16).toFixed(WEIGHT_DECIMAL_PRECISION)) + " oz."
     }
-    return weight.toFixed(WEIGHT_DECIMAL_PRECISION) + " oz."
+    return Number(weight.toFixed(WEIGHT_DECIMAL_PRECISION)) + " oz."
   }
 
 
