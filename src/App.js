@@ -41,7 +41,9 @@ class App extends Component {
             className="col-sm p-0"
           ></ItemPool>
           <div className="col-sm p-0">
-            <WeightCounter weight={13}></WeightCounter>
+            <WeightCounter weight={
+              this.state.selected.reduce((sum, item) => sum + item["weight"], 0)
+            }></WeightCounter>
             <ItemPool 
               items={this.state.selected}
               itemClick={id => this.deselectItem(id)}
