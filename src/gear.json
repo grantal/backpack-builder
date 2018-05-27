@@ -16,5 +16,30 @@
   "name":"Copper Spur HV UL 2 Tent",
   "weight":44,
   "desc":"Tent designed with a high volume hub to maximize strength and increase living space without adding weight."
+ },
+ {  
+  "id":4,
+  "name":"Zip Cooking System",
+  "weight":11.75,
+  "desc":"The Jetboil Zip™ stove system delivers the same great performance and reliability of the original Jetboil at an even better price."
+ },
+ {  
+  "id":5,
+  "name":"WhisperLite International Backpacking Stove",
+  "weight":10.9,
+  "desc":"Easy-to-use design and durable, stainless steel and brass construction. Delivers dependable performance in most any situation."
+ },
+ {  
+  "id":6,
+  "name":"GigaPower 2.0 Stove",
+  "weight":3.2,
+  "desc":"A compact, powerful ultralight backpacking stove. Has a fully adjustable burner and a piezo igniter for quick, easy operation."
+ },
+ {  
+  "id":7,
+  "name":"BioLite Wood Burning CampStove with FlexLight",
+  "weight":33,
+  "desc":"A cross between a backpacking stove and an off-grid power charger. Lets you cook food and charge gadgets with only the twigs you collect around camp. "
  }
+
 ]
