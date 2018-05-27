@@ -10,5 +10,11 @@
   "name":"Z Lite Sol Sleeping Pad",
   "weight":14,
   "desc":"A light, compact, full-length closed-cell foam sleeping pad."
+ },
+ {  
+  "id":3,
+  "name":"Copper Spur HV UL 2 Tent",
+  "weight":44,
+  "desc":"Tent designed with a high volume hub to maximize strength and increase living space without adding weight."
  }
 ]
