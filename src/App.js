@@ -110,6 +110,7 @@ class WeightCounter extends Component {
   render() {
     return (
       <div className="weight-counter">
+        <h2>My Backpack</h2>
         <span><b>Total Weight:</b> {poundsOunces(this.props.weight)}</span>
       </div>
     );
