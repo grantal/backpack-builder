@@ -5,6 +5,19 @@ import gear from './gear.json'
 
 const WEIGHT_DECIMAL_PRECISION = 2;
 
+// rounds off the ounces to prevent floating point errors
+function ouncesToString(weight) {
+  return Number(weight.toFixed(WEIGHT_DECIMAL_PRECISION)) + " oz."
+}
+
+// takes a weight in ounces and convers it to pounds, ounces
+function poundsOunces(weight){
+  if(weight > 16){
+    return (Math.floor(weight / 16)) + " lbs. " + ouncesToString(weight % 16);
+  }
+  return ouncesToString(weight);
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -84,7 +97,7 @@ class BackpackItem extends Component {
     return (
       <ListGroupItem className="backpack-item" onClick={this.props.onClick}>
         <h5>{this.props.name}</h5>
-        <span><b>weight:</b> {this.props.weight} oz.</span><br/>
+        <span><b>weight:</b> {poundsOunces(this.props.weight)}</span><br/>
         <span className="backpack-desc">{this.props.desc}</span>
       </ListGroupItem>
     );
@@ -92,23 +105,12 @@ class BackpackItem extends Component {
 }
 
 class WeightCounter extends Component {
-  // rounds off the ounces to prevent floating point errors
-  ouncesToString(weight) {
-    return Number(weight.toFixed(WEIGHT_DECIMAL_PRECISION)) + " oz."
-  }
 
-  // takes a weight in ounces and convers it to pounds, ounces
-  poundsOunces(weight){
-    if(weight > 16){
-      return (Math.floor(weight / 16)) + " lbs. " + this.ouncesToString(weight % 16);
-    }
-    return this.ouncesToString(weight);
-  }
 
   render() {
     return (
       <div className="weight-counter">
-        <span><b>Total Weight:</b> {this.poundsOunces(this.props.weight)}</span>
+        <span><b>Total Weight:</b> {poundsOunces(this.props.weight)}</span>
       </div>
     );
   }
