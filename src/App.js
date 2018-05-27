@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import gear from './gear.json'
+import backpackImg from './images/Backpack_icon.svg'
 
 const WEIGHT_DECIMAL_PRECISION = 2;
 
@@ -111,6 +112,7 @@ class WeightCounter extends Component {
     return (
       <div className="weight-counter">
         <h2>My Backpack</h2>
+        <img src={backpackImg} className="backpack-img" alt="backpack" /><br/>
         <span><b>Total Weight:</b> {poundsOunces(this.props.weight)}</span>
       </div>
     );
