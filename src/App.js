@@ -3,7 +3,7 @@ import './App.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import gear from './gear.json'
 
-const WEIGHT_DECIMAL_PRECISION = 1;
+const WEIGHT_DECIMAL_PRECISION = 2;
 
 class App extends Component {
   constructor(props) {
@@ -92,13 +92,18 @@ class BackpackItem extends Component {
 }
 
 class WeightCounter extends Component {
-  poundsOunces(weight){
-    if(weight > 16){
-      return (Math.floor(weight / 16)) + " lbs. " + Number((weight % 16).toFixed(WEIGHT_DECIMAL_PRECISION)) + " oz."
-    }
+  // rounds off the ounces to prevent floating point errors
+  ouncesToString(weight) {
     return Number(weight.toFixed(WEIGHT_DECIMAL_PRECISION)) + " oz."
   }
 
+  // takes a weight in ounces and convers it to pounds, ounces
+  poundsOunces(weight){
+    if(weight > 16){
+      return (Math.floor(weight / 16)) + " lbs. " + this.ouncesToString(weight % 16);
+    }
+    return this.ouncesToString(weight);
+  }
 
   render() {
     return (
